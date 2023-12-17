@@ -285,6 +285,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FrontEnd\AboutUs.aspx" />
     <Content Include="FrontEnd\CMS.aspx" />
     <Content Include="FrontEnd\CMSRecord.aspx" />
     <Content Include="FrontEnd\Dashboard.aspx" />
@@ -294,6 +295,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrontEnd\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FrontEnd\CMS.aspx.cs">
       <DependentUpon>CMS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
