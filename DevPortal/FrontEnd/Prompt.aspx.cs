@@ -23,6 +23,10 @@ namespace DevPortal.FrontEnd
         ISQLService sQLService = new SQLService();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/FrontEnd/Login.aspx");
+            }
         }
         protected async void SubmitButton(object sender, EventArgs e)
         {

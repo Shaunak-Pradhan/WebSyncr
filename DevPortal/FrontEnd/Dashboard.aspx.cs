@@ -32,7 +32,10 @@ namespace DevPortal.FrontEnd
         readonly ISQLService sQLService = new SQLService();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //GetInsight();
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/FrontEnd/Login.aspx");
+            }
         }
         protected void Generate(object sender, EventArgs e)
         {

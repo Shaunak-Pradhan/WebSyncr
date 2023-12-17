@@ -17,6 +17,10 @@ namespace DevPortal.FrontEnd
         protected readonly IReadFileService readFileService = new ReadFileService();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/FrontEnd/Login.aspx");
+            }
         }
         protected void ReadFromFile(string filename)
         {

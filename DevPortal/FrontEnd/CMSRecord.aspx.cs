@@ -24,6 +24,11 @@ namespace DevPortal.FrontEnd
         readonly ISQLService sQLService = new SQLService();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/FrontEnd/Login.aspx");
+            }else
+
             dataBlocks.MapDataBlocks(@"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\ClonedPage_55951.html", @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\Page6.html");
             if (!IsPostBack)
             {

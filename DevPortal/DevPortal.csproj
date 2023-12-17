@@ -339,6 +339,7 @@
     <Compile Include="Models\DataBlockTags.cs" />
     <Compile Include="Models\PaymentJson.cs" />
     <Compile Include="Models\Placeholder.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\SEOData.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -346,6 +347,7 @@
     <Compile Include="Services\Implementation\DataBlocksService.cs" />
     <Compile Include="Services\Implementation\FeaturesService.cs" />
     <Compile Include="Services\Implementation\GridViewService.cs" />
+    <Compile Include="Services\Implementation\AuthService.cs" />
     <Compile Include="Services\Implementation\PrompterService.cs" />
     <Compile Include="Services\Implementation\SQLService.cs" />
     <Compile Include="Services\Implementation\UtilityService.cs" />
@@ -354,6 +356,7 @@
     <Compile Include="Services\Interface\IFeaturesService.cs" />
     <Compile Include="Services\Interface\IGridViewService.cs" />
     <Compile Include="Services\Implementation\SeoService.cs" />
+    <Compile Include="Services\Interface\IAuthService.cs" />
     <Compile Include="Services\Interface\IPrompterService.cs" />
     <Compile Include="Services\Interface\IReadFileService.cs" />
     <Compile Include="Services\Interface\ISEOService.cs" />

@@ -15,7 +15,7 @@
             </div>
             <nav style="text-align: center;">
                 <ul>
-                    <li><a class="active" href="/FrontEnd/DevPortal.aspx">Dashboard</a></li>
+                    <li><a class="active" href="/FrontEnd/Dashboard.aspx">Dashboard</a></li>
                     <li><a href="/FrontEnd/CMS.aspx">CMS</a></li>
                     <li><a href="/FrontEnd/Optimizer.aspx">Optimizer</a></li>
                     <li><a href="/FrontEnd/Optimizer.aspx">Features</a></li>
