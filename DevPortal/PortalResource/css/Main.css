@@ -177,12 +177,12 @@ width:49%;
               padding: 20px;
             }*/
 
-            header {
-            /*background-color: #10468de0;*/
-            background-image: radial-gradient(ellipse farthest-corner at center, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            padding: 10px;
-            }
+            /* header { */
+            /* /*background-color: #10468de0;*/ */
+            /* background-image: radial-gradient(ellipse farthest-corner at center, #1e3c72 0%, #2a5298 100%); */
+            /* color: #fff; */
+            /* padding: 10px; */
+            /* } */
 			h1{
 			font-weight:100;
 			}
@@ -208,38 +208,38 @@ width:49%;
                 /* font-weight: bold; */
                 font-family: system-ui;
             }
-            ul {
-              list-style-type: none;
-              margin: 0;
-              padding: 0;
-              overflow: hidden;
-              background-color: #fff;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-            }
+            /* ul { */
+              /* list-style-type: none; */
+              /* margin: 0; */
+              /* padding: 0; */
+              /* overflow: hidden; */
+              /* background-color: #fff; */
+                /* border-bottom-left-radius: 10px; */
+                /* border-bottom-right-radius: 10px; */
+                /* border-top-left-radius: 10px; */
+                /* border-top-right-radius: 10px; */
+            /* } */
 
-            li {
-              float: left;
-            }
+            /* li { */
+              /* float: left; */
+            /* } */
 
-            li a {
-              display: block;
-              color: #003781;
-              text-align: center;
-              padding: 14px 16px;
-              text-decoration: none;
-              font-family: system-ui;
-              font-weight: 500;
-              /* text-transform: uppercase; */
-              padding: 12px 25px;
-            }
+            /* li a { */
+              /* display: block; */
+              /* color: #003781; */
+              /* text-align: center; */
+              /* padding: 14px 16px; */
+              /* text-decoration: none; */
+              /* font-family: system-ui; */
+              /* font-weight: 500; */
+              /* /* text-transform: uppercase; */ */
+              /* padding: 12px 25px; */
+            /* } */
 
-            li a:hover {
-              background-color: #666;
-              color: white;
-            }
+            /* li a:hover { */
+              /* background-color: #666; */
+              /* color: white; */
+            /* } */
 			 /* .button-29 { */
               /* align-items: center; */
               /* appearance: none; */

@@ -344,7 +344,10 @@
     <Compile Include="FrontEnd\Prompt.aspx.designer.cs">
       <DependentUpon>Prompt.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\DataBlocks.cs" />
     <Compile Include="Models\DataBlockTags.cs" />
+    <Compile Include="Models\Pages.cs" />
     <Compile Include="Models\PaymentJson.cs" />
     <Compile Include="Models\Placeholder.cs" />
     <Compile Include="Models\UserRole.cs" />
@@ -383,7 +386,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
