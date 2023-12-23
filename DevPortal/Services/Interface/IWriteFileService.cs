@@ -15,5 +15,7 @@ namespace DevPortal.Services
         void SaveToFolder(int RequestType, string filename);
         void RewriteFile(string filename, string content);
         string RequestType(int TypeID);
+        void MiddlewareRewrite(string pageID,int templateid);
+        void WriteIntoPage(string PageName, string content);
     }
 }

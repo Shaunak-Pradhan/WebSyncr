@@ -7,6 +7,8 @@ using System.Text.RegularExpressions;
 using System.Web;
 using DevPortal.Services.Interface;
 using DevPortal.Models;
+using DevPortal.DTOs;
+using System.Data;
 
 namespace DevPortal.Services.Implementation
 {
@@ -190,29 +192,23 @@ namespace DevPortal.Services.Implementation
             }
             return string.Empty;
         }
-        public string GetTemplate(int templateID, object data)
+        public string GetTemplate(int templateID, Placeholderdto data)
         {
-            Placeholder placeholder = new Placeholder();
-            string DisplayName = string.Empty;
-            string Title = data.GetType().GetProperty("Title").GetValue(data, null).ToString();
-            string Text = data.GetType().GetProperty("Text").GetValue(data, null).ToString();
-            string Text2 = data.GetType().GetProperty("Text2").GetValue(data, null).ToString();
-            string Text3 = data.GetType().GetProperty("Text3").GetValue(data, null).ToString();
-            string Text4 = data.GetType().GetProperty("Text4").GetValue(data, null).ToString();
+
             string[] Template = new string[4];
             Template[0] = "";
             Template[1] = $@"<html>
                                <head>
                                   <meta charset='utf-8'>
-                                  <title>{Title}</title>
+                                  <title>{data.Title}</title>
                                </head>
                                <font color='#A6ACAF' size='5'>
-                                  <marquee><b><i>{Text}</i></b></marquee>
+                                  <marquee><b><i>{data.Heading1}</i></b></marquee>
                                </font>
                                <body background='' link='white' alink='blue' vlink='#F8F8FF' >
-                                  <h1 align='center'> <font color='#F0B27A' size='9' id='heading'> {Text2} <br/> </font>{Text3}</h1>
+                                  <h1 align='center'> <font color='#F0B27A' size='9' id='heading'> {data.Heading2} <br/> </font>{data.Heading3}</h1>
                                   <h3 align='center'>
-                                  <font face='Lato' color='red' size='3'> {Text4} </font> <br /><br /><br /><br /><br /><br/><br/><br/><br/> 
+                                  <font face='Lato' color='red' size='3'> {data.Paragraph1} </font> <br /><br /><br /><br /><br /><br/><br/><br/><br/> 
                                   <hr width='1500px'>
                                   <footer id='footer'>
                                      <center> <b> <font face='cinzel' size='4'> <a href ='#'>About Us| <a href ='#'>Contact Us | <a href ='#'> Privacy Policy | <a href ='#'> Terms | <a href ='#'>Media Kit | <a href ='#'> Sitemap | <a href ='#'> Report a Bug | <a href ='#'> FAQ Partners</a><br/> <a href ='#'>C# Tutorials| <a href ='#'> Common Interview Questions| <a href ='#'> Stories | <a href ='#'>Consultants | <a href ='#'> Ideas | <a href ='#'> Certifications </a><br/><br/> <font color='#FF0000'>all@copyrights 2020</font> </font> </b> </center>

@@ -10,7 +10,5 @@ namespace DevPortal.Services.Interface
     {
         void CreateFile(string filename, string folderpath, string dotextension);
         void CreateEmptyHTMLPage(string filename, string content);
-        void CustomTemplateHTML(int TemplateID, string filename);
-        void BindTemplate(int TemplateID, string PageName, string DisplayName, string extension);
     }
 }

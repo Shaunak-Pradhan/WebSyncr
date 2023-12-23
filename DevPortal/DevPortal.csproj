@@ -295,6 +295,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\BaseTagsdto.cs" />
+    <Compile Include="DTOs\Classdto.cs" />
+    <Compile Include="DTOs\Identifierdto.cs" />
+    <Compile Include="DTOs\Placeholderdto.cs" />
     <Compile Include="FrontEnd\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -350,6 +354,7 @@
     <Compile Include="Models\Pages.cs" />
     <Compile Include="Models\PaymentJson.cs" />
     <Compile Include="Models\Placeholder.cs" />
+    <Compile Include="Models\PropertyType.cs" />
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\SEOData.cs" />
     <Compile Include="Models\UserData.cs" />
@@ -359,8 +364,10 @@
     <Compile Include="Services\Implementation\FeaturesService.cs" />
     <Compile Include="Services\Implementation\GridViewService.cs" />
     <Compile Include="Services\Implementation\AuthService.cs" />
+    <Compile Include="Services\Implementation\MiddlewareService.cs" />
     <Compile Include="Services\Implementation\PrompterService.cs" />
     <Compile Include="Services\Implementation\SQLService.cs" />
+    <Compile Include="Services\Implementation\TemplateService.cs" />
     <Compile Include="Services\Implementation\UtilityService.cs" />
     <Compile Include="Services\Interface\ICreateFileService.cs" />
     <Compile Include="Services\Interface\IDataBlocksService.cs" />
@@ -368,10 +375,12 @@
     <Compile Include="Services\Interface\IGridViewService.cs" />
     <Compile Include="Services\Implementation\SeoService.cs" />
     <Compile Include="Services\Interface\IAuthService.cs" />
+    <Compile Include="Services\Interface\IMiddlewareService.cs" />
     <Compile Include="Services\Interface\IPrompterService.cs" />
     <Compile Include="Services\Interface\IReadFileService.cs" />
     <Compile Include="Services\Interface\ISEOService.cs" />
     <Compile Include="Services\Interface\ISQLService.cs" />
+    <Compile Include="Services\Interface\ITemplateService.cs" />
     <Compile Include="Services\Interface\IUtilityService.cs" />
     <Compile Include="Services\Interface\IWriteFileService.cs" />
     <Compile Include="Services\Implementation\ReadFileService.cs" />

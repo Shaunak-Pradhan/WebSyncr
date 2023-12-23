@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using static DevPortal.Services.Implementation.TemplateService;
+
 namespace DevPortal.Services
 {
     public class WriteFileService : IWriteFileService
     {
-        IUtilityService utilityService=new UtilityService();
+        IUtilityService utilityService = new UtilityService();
+        IMiddlewareService middlewareService;
         protected string GetPagePath(string filename)
         {
             return @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\" + filename + ".html";
@@ -32,7 +35,16 @@ namespace DevPortal.Services
             if (element != null)
             {
                 element.InnerHtml = content;
-                doc.Save(GetPagePath("Page"+PageID));
+                doc.Save(GetPagePath("Page" + PageID));
+            }
+        }
+        public void MiddlewareRewrite(string pageID,int templateid)
+        {
+            List<string> fileExtensionsToSearch = FileExtensions();
+            string filePath = FindFile("Page"+pageID, fileExtensionsToSearch);
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                File.WriteAllText(filePath, middlewareService.Pattern(pageID,templateid));
             }
         }
         public void WriteIntoPageUsingName(string Pagename, string ID, string content)
@@ -96,7 +108,7 @@ namespace DevPortal.Services
             string[] files = Directory.GetFiles(@"C:\Users\ShaunakSunilPradhan\source\repos\DevPortal\DevPortal\", filename, SearchOption.AllDirectories);
             if (files.Length > 0)
             {
-                string filePath = files[0]; 
+                string filePath = files[0];
                 return filePath;
             }
             else
@@ -131,6 +143,10 @@ namespace DevPortal.Services
             {
                 utilityService.LogicFolder();
             }
+        }
+        public void WriteIntoPage(string PageName,string content)
+        {
+            File.WriteAllText(utilityService.PagesFolder(PageName), content);
         }
     }
 }

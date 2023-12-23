@@ -28,6 +28,7 @@ namespace DevPortal.FrontEnd
         private DataTable dataTable = new DataTable();
         readonly IGridViewService gridViewService = new GridViewService();
         readonly ICreateFileService createFileService = new CreateFileService();
+        readonly ITemplateService templateService = new TemplateService();
         readonly IWriteFileService writeFileService = new WriteFileService();
         readonly ISQLService sQLService = new SQLService();
         protected void Page_Load(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace DevPortal.FrontEnd
             else filename = "Design";
             string pathName = @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\" + filename + Index + Page_ext;
             string Filename = filename + Index + Page_ext;
-            createFileService.BindTemplate(1, Filename, DisplayName,Page_ext);
+            templateService.BindTemplate(1, filename + Index, DisplayName,Page_ext);
             if (Page_ext == ".js")
             {
                 folderPath = @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Logic\";
@@ -74,16 +75,6 @@ namespace DevPortal.FrontEnd
                 folderPath = @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Designs\";
                 sQLService.InsertToDesign(Index, Filename, DisplayName);
             }
-            // string[] files = Directory.GetFiles(folderPath);
-            // if (files.Length > 0)
-            // {
-            //     Console.WriteLine("The folder contains files.");
-            // }
-            // else
-            // {
-            //     sQLService.DeleteFromTable("Pages");
-            //     Console.WriteLine("The folder is empty.");
-            // }
             createFileService.CreateFile(Filename, folderPath, Page_ext);
             gridViewService.GridViewForTable(Table, GridView);
         }
@@ -123,7 +114,7 @@ namespace DevPortal.FrontEnd
             sQLService.UpdateTableSQL("Pages", "PID", Int32.Parse(PID), "TemplateName", TemplateName.Text);
             gridViewService.GridViewForTable("Pages",GridView);
             //object reader2 = GetValueFromTable("Pages", "DisplayName", "PID", Int32.Parse(PID));
-            createFileService.BindTemplate(Int32.Parse(selectedValue), "Page" + PID + ".html", sQLService.GetValueFromTable("Pages", "DisplayName", "PID", Int32.Parse(PID)).ToString(), ".html");
+            templateService.BindTemplate(Int32.Parse(selectedValue), "Page" + PID + ".html", sQLService.GetValueForID("Pages", "DisplayName", "PID", Int32.Parse(PID)).ToString(), ".html");
             //CustomTemplateHTML(Int32.Parse(selectedValue),"Page"+PID);
         }
         protected void ShowGridView(object sender, EventArgs e)

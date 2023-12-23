@@ -17,6 +17,6 @@ namespace DevPortal.Services.Interface
         void DeleteFromTable(string Table);
         void DeletePage(string id);
         void UpdateTableSQL(string Table, string PrimaryKeyName, int ID, string colname, string value);
-        object GetValueFromTable(string Table, string Colname, string PrimaryKeyName, int ID);
+        object GetValueForID(string Table, string Colname, string PrimaryKeyName, int ID);
     }
 }

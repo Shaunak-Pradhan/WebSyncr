@@ -105,7 +105,7 @@ namespace DevPortal.Services.Implementation
                 sqlcmd2.ExecuteReader();
             }
         }
-        public object GetValueFromTable(string Table, string Colname, string PrimaryKeyName, int ID)
+        public object GetValueForID(string Table, string Colname, string PrimaryKeyName, int ID)
         {
             SqlCommand sqlcmd3 = new SqlCommand("select " + Colname + " from " + Table + " where " + PrimaryKeyName + " = " + ID, SqlConnectionObj());
             var IndexObj = sqlcmd3.ExecuteReader();

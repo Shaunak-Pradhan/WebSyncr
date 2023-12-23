@@ -117,7 +117,7 @@
                         <asp:BoundField DataField="TemplateName" HeaderText="Design" />
                         <asp:TemplateField HeaderText="Attach Design">
                             <ItemTemplate>
-                                <asp:DropDownList runat="server" ID="ddlName" DataSource='<%# DevPortal.Services.Implementation.CreateFileService.GetNames() %>' DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="ddlName_SelectedIndexChanged" AutoPostBack="true" CommandArgument='<%# Container.DataItemIndex %>'></asp:DropDownList>
+                                <asp:DropDownList runat="server" ID="ddlName" DataSource='<%# DevPortal.Services.Implementation.TemplateService.GetNames() %>' DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="ddlName_SelectedIndexChanged" AutoPostBack="true" CommandArgument='<%# Container.DataItemIndex %>'></asp:DropDownList>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Link">
