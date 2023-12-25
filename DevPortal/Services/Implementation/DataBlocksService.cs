@@ -46,8 +46,6 @@ namespace DevPortal.Services.Implementation
             {
                 pageData.DynamicProperties[node.Key] = node.Value;
             }
-            pageData.DynamicProperties["Heading"] = readFileService.ReadUsingID("heading", filename);
-            pageData.DynamicProperties["Footer"] = readFileService.ReadUsingID("footer", filename);
             return pageData;
         }
         public void CreateDynamicControls(PlaceHolder dynamicLabelsPlaceholder, string propertyName, string propertyValue)
@@ -69,7 +67,7 @@ namespace DevPortal.Services.Implementation
                     $.ajax({{
                     type: ""POST"",
                     url: ""CMSRecord.aspx/DynamicControlOnClick"",
-                    data: JSON.stringify({{ propertyName: '{propertyName}Field', textareaText: text }}),
+                    data: JSON.stringify({{ propertyName: '{propertyName}', textareaText: text }}),
                     contentType: ""application/json; charset=utf-8"",
                     dataType: ""json"",
                     success: function (response) {{
@@ -81,7 +79,7 @@ namespace DevPortal.Services.Implementation
             ";
             string buttonOnClick = $@"document.getElementById('{propertyName}Button').addEventListener('click', function () {{
                 debugger;
-                 DynamicControlOnClick('{propertyName}Field');
+                 DynamicControlOnClick('{propertyName}');
              }});";
             ScriptManager.RegisterStartupScript(dynamicLabelsPlaceholder, dynamicLabelsPlaceholder.GetType(), $"ButtonScript_{propertyName}", buttonScript, true);
             ScriptManager.RegisterStartupScript(dynamicLabelsPlaceholder, dynamicLabelsPlaceholder.GetType(), $"ButtonScript_{propertyName}", buttonOnClick, true);

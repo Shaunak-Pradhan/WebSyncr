@@ -81,6 +81,19 @@ namespace DevPortal.Services.Implementation
             int rowsAffected = cmd.InsertCommand.ExecuteNonQuery();
             connection1.Close();
         }
+        public void InsertToTemplates(int Index, string PropertyName, string PropertyValue, int PageID)
+        {
+            SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;");
+            SqlDataAdapter cmd = new SqlDataAdapter();
+            cmd.InsertCommand = new SqlCommand($@"insert into Templates ( ID,[PropertyName],[PropertyValue],[PageID]) values(@ID,@PropertyName,@PropertyValue,@PageID) ", connection1);
+            connection1.Open();
+            cmd.InsertCommand.Parameters.Add("@ID", SqlDbType.Int).Value = Index;
+            cmd.InsertCommand.Parameters.Add("@PropertyName", SqlDbType.VarChar).Value = PropertyName;
+            cmd.InsertCommand.Parameters.Add("@PropertyValue", SqlDbType.VarChar).Value = PropertyValue;
+            cmd.InsertCommand.Parameters.Add("@PageID", SqlDbType.VarChar).Value = PageID;
+            int rowsAffected = cmd.InsertCommand.ExecuteNonQuery();
+            connection1.Close();
+        }
         public void DeleteFromTable(string Table)
         {
             SqlCommand sqlcmd3 = new SqlCommand("delete from " + Table, SqlConnectionObj());

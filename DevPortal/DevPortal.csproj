@@ -355,6 +355,7 @@
     <Compile Include="Models\PaymentJson.cs" />
     <Compile Include="Models\Placeholder.cs" />
     <Compile Include="Models\PropertyType.cs" />
+    <Compile Include="Models\Template.cs" />
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\SEOData.cs" />
     <Compile Include="Models\UserData.cs" />

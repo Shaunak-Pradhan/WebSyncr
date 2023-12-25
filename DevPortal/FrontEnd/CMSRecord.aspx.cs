@@ -63,7 +63,7 @@ namespace DevPortal.FrontEnd
         {
             SQLService sqlService = new SQLService();
             WriteFileService writeFileService = new WriteFileService();
-            sqlService.InsertToDataBlocks(1,propertyName,textareaText,Int32.Parse(pageID));
+            //sqlService.InsertToDataBlocks(1,propertyName,textareaText,Int32.Parse(pageID));
             writeFileService.WriteIntoPageUsingID(pageID,propertyName, textareaText);
         }
         protected void HeaderOnClick(object sender, EventArgs e)

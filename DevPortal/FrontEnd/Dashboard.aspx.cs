@@ -59,7 +59,7 @@ namespace DevPortal.FrontEnd
             else filename = "Design";
             string pathName = @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\" + filename + Index + Page_ext;
             string Filename = filename + Index + Page_ext;
-            templateService.BindTemplate(1, filename + Index, DisplayName,Page_ext);
+            templateService.BindTemplate(1, filename + Index, DisplayName, Page_ext);
             if (Page_ext == ".js")
             {
                 folderPath = @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Logic\";
@@ -100,26 +100,21 @@ namespace DevPortal.FrontEnd
                 gridViewService.GridViewForTable("Pages", GridView);
             }
         }
-        
+
         protected void ddlName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DropDownList ddlName = (DropDownList)sender; // Cast sender as DropDownList
+            DropDownList ddlName = (DropDownList)sender;
             GridViewRow row = (GridViewRow)ddlName.NamingContainer;
             int rowIndex = row.RowIndex;
             GridViewRow row2 = GridView.Rows[rowIndex];
             string PID = row2.Cells[0].Text;
             string selectedValue = ddlName.SelectedValue;
             ListItem TemplateName = ddlName.Items.FindByValue(selectedValue);
-            sQLService.UpdateTableSQL("Pages", "PID", Int32.Parse(PID), "TemplateID", selectedValue);
-            sQLService.UpdateTableSQL("Pages", "PID", Int32.Parse(PID), "TemplateName", TemplateName.Text);
-            gridViewService.GridViewForTable("Pages",GridView);
-            //object reader2 = GetValueFromTable("Pages", "DisplayName", "PID", Int32.Parse(PID));
-            templateService.BindTemplate(Int32.Parse(selectedValue), "Page" + PID + ".html", sQLService.GetValueForID("Pages", "DisplayName", "PID", Int32.Parse(PID)).ToString(), ".html");
-            //CustomTemplateHTML(Int32.Parse(selectedValue),"Page"+PID);
+            templateService.SwitchTemplate(selectedValue, PID, TemplateName.Text, GridView);
         }
         protected void ShowGridView(object sender, EventArgs e)
         {
-            gridViewService.GridViewForTable("Pages",GridView);
+            gridViewService.GridViewForTable("Pages", GridView);
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

@@ -9,5 +9,7 @@ namespace DevPortal.DTOs
     public class Placeholderdto : BaseTagsdto
     {
         public string TemplateName { get; set; }
+        public string WebsiteName { get; set; }
+        public string ContactNo { get; set; }
     }
 }

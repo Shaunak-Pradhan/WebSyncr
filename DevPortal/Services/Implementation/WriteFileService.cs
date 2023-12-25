@@ -29,9 +29,22 @@ namespace DevPortal.Services
         }
         public void WriteIntoPageUsingID(string PageID, string ID, string content)
         {
+            string cleanedID = ID.StartsWith("id_") ? ID.Substring(3) : ID;
             var doc = new HtmlDocument();
             doc.Load(@"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\Page" + PageID + ".html");
-            var element = doc.GetElementbyId(ID);
+            var element = doc.GetElementbyId(cleanedID);
+            if (element != null)
+            {
+                element.InnerHtml = content;
+                doc.Save(GetPagePath("Page" + PageID));
+            }
+        }
+        public void WriteIntoPageUsingClass(string PageID, string Class, string content)
+        {
+            string cleanedID = Class.StartsWith("id_") ? Class.Substring(6) : Class;
+            var doc = new HtmlDocument();
+            doc.Load(@"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\Page" + PageID + ".html");
+            var element = doc.GetElementbyId(cleanedID);
             if (element != null)
             {
                 element.InnerHtml = content;
