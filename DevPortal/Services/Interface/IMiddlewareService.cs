@@ -9,5 +9,6 @@ namespace DevPortal.Services.Interface
     public interface IMiddlewareService
     {
         string Pattern(string pageid, int templateid);
+        void Middleware(string pageid, int templateid, int prop);
     }
 }

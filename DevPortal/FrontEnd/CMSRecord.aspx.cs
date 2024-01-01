@@ -22,6 +22,7 @@ namespace DevPortal.FrontEnd
         readonly IWriteFileService writeFileService= new WriteFileService();
         readonly IDataBlocksService dataBlocks = new DataBlocksService();
         readonly ISQLService sQLService = new SQLService();
+        readonly IMiddlewareService middlewareService = new MiddlewareService();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!User.Identity.IsAuthenticated)
@@ -35,6 +36,7 @@ namespace DevPortal.FrontEnd
                 if (Request.QueryString["PageID"] != null)
                 {
                     pageID = Request.QueryString["PageID"];
+                    middlewareService.Middleware(pageID,1,0);
                     gridViewService.GetRowForFile("Page" + pageID + ".html", "PageName", GridView);
                     PageData nodes = dataBlocks.CreateDataBlocks("Page" + pageID);
                     foreach (var property in nodes.DynamicProperties)
