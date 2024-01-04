@@ -13,7 +13,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="images/favicon.png" type="">
+    <link rel="shortcut icon" href="images/WebsyncrLogo.png" type="">
 
     <title>Websyncr </title>
 
@@ -52,10 +52,14 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="AboutUs.aspx">
+                      <a class="navbar-brand" href="AboutUs.aspx">
                         <span>Websyncr
                         </span>
                     </a>
+                    <%--<a class="navbar-brand" href="AboutUs.aspx">
+                        <img src="images/websyncrlogo.png" alt="Websyncr Logo">
+                    </a>--%>
+
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class=""></span>
@@ -439,7 +443,7 @@
     <section class="footer_section">
         <div class="container">
             <p>
-                &copy; <span id="displayYear"></span> All Rights Reserved By
+                &copy; <span id="displayYear"></span>All Rights Reserved By
         <a href="https://websyncr.com/">Websyncr</a>
             </p>
         </div>
@@ -470,7 +474,7 @@
             }, 1000); // Duration in milliseconds
         }
     </script>
-    
+
 </body>
 
 </html>

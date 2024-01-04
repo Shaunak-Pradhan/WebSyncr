@@ -1,4 +1,5 @@
 ﻿using DevPortal.Services.Implementation;
+using DevPortal.Services.Interface;
 using HtmlAgilityPack;
 using NUglify;
 using NUglify.Html;
@@ -21,6 +22,7 @@ namespace DevPortal.FrontEnd
     {
         WebForm1 DevPortal = new WebForm1();
         UtilityService utilityService = new UtilityService();
+        ISQLService sQLService = new SQLService();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!User.Identity.IsAuthenticated)
@@ -115,41 +117,41 @@ namespace DevPortal.FrontEnd
 
         public void GridViewCall(string Table)
         {
-            string connectionString = "Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;";
-            SqlConnection sqlconn = new SqlConnection(connectionString);
-            try
+            using (SqlConnection sqlconn = sQLService.SqlConnectionObj())
             {
-                sqlconn.Open();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
+                try
+                {
+                    sqlconn.Open();
 
-            SqlCommand sqlcmd = new SqlCommand("select * from " + Table, sqlconn);
-            SqlDataAdapter sda = new SqlDataAdapter();
+                    SqlCommand sqlcmd = new SqlCommand("select * from " + Table, sqlconn);
+                    SqlDataAdapter sda = new SqlDataAdapter();
 
-            sda.SelectCommand = sqlcmd;
-            DataSet ds = new DataSet();
-            sda.Fill(ds, "table1");
-            DataTable dataTable = ds.Tables["table1"];
-            //string result = string.Concat(str1, " ", str2, str3);
-            GridView.DataSource = ds;
-            GridView.DataBind();
-            if (GridView.Rows.Count > 0)
-            {
-                GridView.Visible = true;
-                GridView.Rows[0].Cells[0].Visible = true;
+                    sda.SelectCommand = sqlcmd;
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds, "table1");
+                    DataTable dataTable = ds.Tables["table1"];
+
+                    GridView.DataSource = ds;
+                    GridView.DataBind();
+
+                    if (GridView.Rows.Count > 0)
+                    {
+                        GridView.Visible = true;
+                        GridView.Rows[0].Cells[0].Visible = true;
+                    }
+                    else
+                    {
+                        GridView.Visible = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception appropriately, e.g., log it or display an error message.
+                    throw new Exception(ex.ToString());
+                }
             }
-            else
-            {
-                GridView.Visible = false;
-            }
-
-            int i = 2;
-
-            sqlconn.Close();
         }
+
 
         protected object DevPortalObj()
         {

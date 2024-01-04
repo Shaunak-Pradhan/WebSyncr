@@ -12,10 +12,15 @@ namespace DevPortal.Services.Implementation
 {
     public class SQLService : ISQLService
     {
+        IWebHostService webHostService;
+        private string connectionstring()
+        {
+            //return @"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;"
+            return @"Data Source=SQL8006.site4now.net;Initial Catalog=db_aa37fc_cbsequick;User Id=db_aa37fc_cbsequick_admin;Password=P@ssw0rd";
+        }
         public SqlConnection SqlConnectionObj()
         {
-            string connectionString = "Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;";
-            SqlConnection sqlconn = new SqlConnection(connectionString);
+            SqlConnection sqlconn = new SqlConnection(webHostService.HostSettings());
             try
             {
                 sqlconn.Open();
@@ -27,8 +32,8 @@ namespace DevPortal.Services.Implementation
             return sqlconn;
         }
         public void InsertToPages(int Index, string FileName, string DisplayName)
-        {        
-            SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;");
+        {
+            SqlConnection connection1 = new SqlConnection(webHostService.HostSettings());
             SqlDataAdapter cmd = new SqlDataAdapter();
             cmd.InsertCommand = new SqlCommand("insert into Pages ( PID,PageName,DisplayName,TemplateID,TemplateName,PageURL,EditLink) values(@PID,@PageName,@DisplayName,null,null,@PageURL,@EditLink) ", connection1);
             connection1.Open();
@@ -42,7 +47,7 @@ namespace DevPortal.Services.Implementation
         }
         public void InsertToLogic(int Index, string FileName, string DisplayName)
         {
-            SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;");
+            SqlConnection connection1 = new SqlConnection(webHostService.HostSettings());
             SqlDataAdapter cmd = new SqlDataAdapter();
             cmd.InsertCommand = new SqlCommand("insert into Pages ( PID,PageName,DisplayName,TemplateID,TemplateName,PageURL,EditLink) values(@PID,@PageName,@DisplayName,null,null,@PageURL,@EditLink) ", connection1);
             connection1.Open();
@@ -56,7 +61,7 @@ namespace DevPortal.Services.Implementation
         }
         public void InsertToDesign(int Index, string FileName, string DisplayName)
         {
-            SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;");
+            SqlConnection connection1 = new SqlConnection(webHostService.HostSettings());
             SqlDataAdapter cmd = new SqlDataAdapter();
             cmd.InsertCommand = new SqlCommand("insert into Pages ( PID,PageName,DisplayName,TemplateID,TemplateName,PageURL,EditLink) values(@PID,@PageName,@DisplayName,null,null,@PageURL,@EditLink) ", connection1);
             connection1.Open();
@@ -68,9 +73,9 @@ namespace DevPortal.Services.Implementation
             int rowsAffected = cmd.InsertCommand.ExecuteNonQuery();
             connection1.Close();
         }
-        public void InsertToDataBlocks(int Index, string PropertyName,string PropertyValue, int PageID)
+        public void InsertToDataBlocks(int Index, string PropertyName, string PropertyValue, int PageID)
         {
-            SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;");
+            SqlConnection connection1 = new SqlConnection(webHostService.HostSettings());
             SqlDataAdapter cmd = new SqlDataAdapter();
             cmd.InsertCommand = new SqlCommand($@"insert into DataBlocks ( ID,[PropertyName],[PropertyValue],[PageID]) values(@ID,@PropertyName,@PropertyValue,@PageID) ", connection1);
             connection1.Open();
@@ -83,7 +88,7 @@ namespace DevPortal.Services.Implementation
         }
         public void InsertToTemplates(int Index, string PropertyName, string PropertyValue, int PageID)
         {
-            SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=Cbsequick;Integrated Security=True;MultipleActiveResultSets=true;");
+            SqlConnection connection1 = new SqlConnection(webHostService.HostSettings());
             SqlDataAdapter cmd = new SqlDataAdapter();
             cmd.InsertCommand = new SqlCommand($@"insert into Templates ( ID,[PropertyName],[PropertyValue],[PageID]) values(@ID,@PropertyName,@PropertyValue,@PageID) ", connection1);
             connection1.Open();
@@ -103,7 +108,7 @@ namespace DevPortal.Services.Implementation
         {
             SqlCommand sqlcmd3 = new SqlCommand("delete from Pages where  PID =" + id, SqlConnectionObj());
             sqlcmd3.ExecuteReader();
-            
+
         }
         public void UpdateTableSQL(string Table, string PrimaryKeyName, int ID, string colname, string value)
         {
