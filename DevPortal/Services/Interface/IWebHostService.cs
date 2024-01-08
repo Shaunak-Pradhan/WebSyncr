@@ -8,6 +8,7 @@ namespace DevPortal.Services.Interface
 {
     public interface IWebHostService
     {
-        string HostSettings();
+        string Environment();
+        string Directory(string PageName=null);
     }
 }

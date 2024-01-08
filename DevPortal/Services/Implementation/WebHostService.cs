@@ -4,9 +4,9 @@ using System.Configuration;
 
 public class WebHostService : IWebHostService
 {
-    public string HostSettings()
+    string environment = "SmarterASP";
+    public string Environment()
     {
-        string environment = "Local";
         string connectionString;
         if (environment == "Local")
         {
@@ -23,5 +23,29 @@ public class WebHostService : IWebHostService
             throw new InvalidOperationException($"Unsupported environment: {environment}");
         }
         
+    }
+    public string Directory(string PageName=null)
+    {
+        if (environment == "Local")
+        {
+            if (PageName == null)
+            {
+                return @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\";
+            }
+            else
+            return @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\" + PageName + ".html"; ;
+        }
+        else if (environment == "SmarterASP")
+        {
+            if (PageName == null)
+            {
+                return @"\Pages\";
+            }
+            return @"\Pages\" + PageName + ".html"; ;
+        }
+        else
+        {
+            throw new InvalidOperationException($"Unsupported environment: {environment}");
+        }
     }
 }

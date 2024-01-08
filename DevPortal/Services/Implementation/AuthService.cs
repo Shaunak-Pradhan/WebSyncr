@@ -71,5 +71,9 @@ namespace DevPortal.Services.Implementation
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
+        public bool EnableAuth()
+        {
+            return false;
+        }
     }
 }

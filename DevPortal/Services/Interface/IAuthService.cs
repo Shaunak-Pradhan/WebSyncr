@@ -9,5 +9,6 @@ namespace DevPortal.Services.Interface
     public interface IAuthService
     {
         bool IsValidUser(string username, string password);
+        bool EnableAuth();
     }
 }

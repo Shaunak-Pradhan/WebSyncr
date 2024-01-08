@@ -14,6 +14,7 @@ namespace DevPortal.Services.Implementation
 {
     public class UtilityService : IUtilityService
     {
+        readonly IWebHostService _webHostService = new WebHostService();
         public int GetFileID(string filename)
         {
             return 1;
@@ -21,7 +22,7 @@ namespace DevPortal.Services.Implementation
 
         public string PagesFolder(string PageName)
         {
-            return @"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\" + PageName + ".html";
+            return _webHostService.Directory(PageName);
         }
         public string JsFolderOld(string filename)
         {
