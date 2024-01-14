@@ -110,11 +110,11 @@ namespace DevPortal.Services.Implementation
         public void PropertyFinder(string property, string value, string pageid)
         {
             string filePath = Path.Combine(@"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\", $"Page{pageid}.html");
-            if (File.Exists(filePath))
+            if (System.IO.File.Exists(filePath))
             {
-                string htmlContent = File.ReadAllText(filePath);
+                string htmlContent = System.IO.File.ReadAllText(filePath);
                 string replacedHtml = ReplacePropertyValue(htmlContent, property, value);
-                File.WriteAllText(filePath, replacedHtml);
+                System.IO.File.WriteAllText(filePath, replacedHtml);
                 Console.WriteLine($"Property '{property}' in Page{pageid}.html has been replaced with '{value}'.");
             }
             else
@@ -132,10 +132,10 @@ namespace DevPortal.Services.Implementation
         {
             try
             {
-                string fromHtmlContent = File.ReadAllText(fromHtmlPath);
-                string toHtmlContent = File.ReadAllText(toHtmlPath);
+                string fromHtmlContent = System.IO.File.ReadAllText(fromHtmlPath);
+                string toHtmlContent = System.IO.File.ReadAllText(toHtmlPath);
                 toHtmlContent = MapTags(fromHtmlContent, toHtmlContent);
-                File.WriteAllText(toHtmlPath, toHtmlContent);
+                System.IO.File.WriteAllText(toHtmlPath, toHtmlContent);
             }
             catch (Exception ex)
             {

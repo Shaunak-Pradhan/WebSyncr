@@ -18,6 +18,7 @@ namespace DevPortal.Services.Implementation
         IUtilityService utilityService = new UtilityService();
         IWriteFileService writeFileService = new WriteFileService();
         IGridViewService gridViewService = new GridViewService();
+        IWebHostService webHostService = new WebHostService();
         public static List<Template> GetNames()
         {
             List<Template> Template = new List<Template>();
@@ -62,7 +63,7 @@ namespace DevPortal.Services.Implementation
             if (IndexObj.Read())
             {
                 var temp = IndexObj["TemplateHTML"];
-                File.WriteAllText(@"C:\Users\ShaunakSunilPradhan\Downloads\DevPortal\DevPortal\Pages\" + filename + ".html", temp.ToString());
+                System.IO.File.WriteAllText(webHostService.Directory(filename), temp.ToString());
             }
         }
         private string DefaultTemplate(Placeholderdto data)

@@ -80,7 +80,8 @@
 
 </head>
 
-<body class="sub_page">
+<body style="background-color: #f2f2f2; overflow-x: hidden;" class="sub_page">
+
 
 
 
@@ -96,7 +97,7 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="default.aspx">
                         <span>Websyncr
                         </span>
                     </a>

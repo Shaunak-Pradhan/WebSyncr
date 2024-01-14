@@ -52,7 +52,7 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                      <a class="navbar-brand" href="Default.aspx">
+                    <a class="navbar-brand" href="Default.aspx">
                         <span>Websyncr
                         </span>
                     </a>
@@ -418,7 +418,7 @@
                             </a>
                             <a class="" href="Prompt.aspx">Prompter
                             </a>
-                            <a class="" href="AboustUs.aspx">Why Us
+                            <a class="" href="default.aspx">Why Us
                             </a>
                         </div>
                     </div>
@@ -439,16 +439,9 @@
 
     <!-- end info section -->
 
-    <!-- footer section -->
-    <section class="footer_section">
-        <div class="container">
-            <p>
-                &copy; <span id="displayYear"></span>All Rights Reserved By
-        <a href="https://websyncr.com/">Websyncr</a>
-            </p>
-        </div>
-    </section>
-    <!-- footer section -->
+    <footer>
+        &copy; 2024 WebSyncr. All rights reserved.
+    </footer>
 
     <!-- jQery -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>

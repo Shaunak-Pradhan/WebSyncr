@@ -36,7 +36,7 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="default.aspx">
                         <span>Websyncr
                         </span>
                     </a>
@@ -177,112 +177,133 @@
     </form>
 
 
-     <section class="info_section layout_padding2">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-6 col-lg-3 info_col">
-                  <div class="info_contact">
-                      <h4>Address
-                      </h4>
-                      <div class="contact_link_box">
-                          <a href="">
-                              <i class="fa fa-map-marker" aria-hidden="true"></i>
-                              <span>Al Nahda, Sharjah
-                              </span>
-                          </a>
-                          <a href="">
-                              <i class="fa fa-phone" aria-hidden="true"></i>
-                              <span>Call +971 561280452
-                              </span>
-                          </a>
-                          <a href="">
-                              <i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span>websyncr@gmail.com
-                              </span>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="info_social">
-                      <a href="">
-                          <i class="fa fa-facebook" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                          <i class="fa fa-twitter" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                          <i class="fa fa-linkedin" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                          <i class="fa fa-instagram" aria-hidden="true"></i>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-3 info_col">
-                  <div class="info_detail">
-                      <h4>Info
-                      </h4>
-                      <p>
-                          Unlock the potential of your online presence effortlessly with our cutting-edge Content Management System (CMS). Revamping your website has never been this easy and quick. Whether you're a seasoned web developer or a business owner looking to refresh your online identity, our CMS is designed to make the entire process seamless, efficient, and enjoyable.
-                      </p>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-2 mx-auto info_col">
-                  <div class="info_link_box">
-                      <h4>Links
-                      </h4>
-                      <div class="info_links">
-                          <a class="active" href="Dashboard.aspx">Dashboard
-                          </a>
-                          <a class="" href="CMS.aspx">CMS
-                          </a>
-                          <a class="" href="Optimizer.aspx">Optimizer
-                          </a>
-                          <a class="" href="Prompt.aspx">Prompter
-                          </a>
-                          <a class="" href="AboustUs.aspx">Why Us
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <div id="contactSection" class="col-md-6 col-lg-3 info_col ">
-                  <h4>Contact us for more info
-                  </h4>
-                  <form action="#">
-                      <input type="text" placeholder="Enter email" />
-                      <button type="submit">
-                          submit
-                      </button>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </section>
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 info_col">
+                    <div class="info_contact">
+                        <h4>Address
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>Al Nahda, Sharjah
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>Call +971 561280452
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>websyncr@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info_social">
+                        <a href="">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 info_col">
+                    <div class="info_detail">
+                        <h4>Info
+                        </h4>
+                        <p>
+                            Unlock the potential of your online presence effortlessly with our cutting-edge Content Management System (CMS). Revamping your website has never been this easy and quick. Whether you're a seasoned web developer or a business owner looking to refresh your online identity, our CMS is designed to make the entire process seamless, efficient, and enjoyable.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mx-auto info_col">
+                    <div class="info_link_box">
+                        <h4>Links
+                        </h4>
+                        <div class="info_links">
+                            <a class="active" href="Dashboard.aspx">Dashboard
+                            </a>
+                            <a class="" href="CMS.aspx">CMS
+                            </a>
+                            <a class="" href="Optimizer.aspx">Optimizer
+                            </a>
+                            <a class="" href="Prompt.aspx">Prompter
+                            </a>
+                            <a class="" href="default.aspx">Why Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="contactSection" class="col-md-6 col-lg-3 info_col ">
+                    <h4>Contact us for more info
+                    </h4>
+                    <form action="#">
+                        <input type="text" placeholder="Enter email" />
+                        <button type="submit">
+                            submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- end info section -->
-  <!-- jQery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- custom js -->
-  <script type="text/javascript" src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
-  <script>
-      function scrollToContactSection() {
-          // Adjust the duration and offset as needed
-          $('html, body').animate({
-              scrollTop: $('#contactSection').offset().top - 100 // Offset to leave some space
-          }, 1000); // Duration in milliseconds
-      }
-  </script>
+    <!-- end info section -->
+    <!-- jQery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+    <!-- End Google Map -->
+    <script>
+        function scrollToContactSection() {
+            // Adjust the duration and offset as needed
+            $('html, body').animate({
+                scrollTop: $('#contactSection').offset().top - 100 // Offset to leave some space
+            }, 1000); // Duration in milliseconds
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+        function logBaseDirectory() {
+            $.ajax({
+                type: "POST",
+                url: "Dashboard.aspx/AccessCheck",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("Project Directory: " + response.d);
+                },
+                error: function (error) {
+                    console.error("Error getting base directory from server.");
+                }
+            });
+        }
+
+        // Example usage
+        logBaseDirectory();
+    </script>
 
     <footer>
         &copy; 2024 WebSyncr. All rights reserved.

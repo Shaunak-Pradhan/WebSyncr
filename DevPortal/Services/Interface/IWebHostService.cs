@@ -9,6 +9,7 @@ namespace DevPortal.Services.Interface
     public interface IWebHostService
     {
         string Environment();
-        string Directory(string PageName=null);
+        string Directory(string PageName = null, string FolderName = null);
+        string AccessCheck();
     }
 }

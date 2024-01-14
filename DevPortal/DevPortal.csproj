@@ -360,9 +360,10 @@
       <DependentUpon>Prompt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Implementation\CreateFileService.cs" />
+    <Compile Include="Services\Implementation\FileService\CreateFileService.cs" />
     <Compile Include="Services\Implementation\DataBlocksService.cs" />
     <Compile Include="Services\Implementation\FeaturesService.cs" />
+    <Compile Include="Services\Implementation\FileService\DeleteFileService.cs" />
     <Compile Include="Services\Implementation\GridViewService.cs" />
     <Compile Include="Services\Implementation\AuthService.cs" />
     <Compile Include="Services\Implementation\MiddlewareService.cs" />
@@ -373,6 +374,7 @@
     <Compile Include="Services\Implementation\WebHostService.cs" />
     <Compile Include="Services\Interface\ICreateFileService.cs" />
     <Compile Include="Services\Interface\IDataBlocksService.cs" />
+    <Compile Include="Services\Interface\IDeleteFileService.cs" />
     <Compile Include="Services\Interface\IFeaturesService.cs" />
     <Compile Include="Services\Interface\IGridViewService.cs" />
     <Compile Include="Services\Implementation\SeoService.cs" />
@@ -386,8 +388,8 @@
     <Compile Include="Services\Interface\IUtilityService.cs" />
     <Compile Include="Services\Interface\IWebHostService.cs" />
     <Compile Include="Services\Interface\IWriteFileService.cs" />
-    <Compile Include="Services\Implementation\ReadFileService.cs" />
-    <Compile Include="Services\Implementation\WriteFileService.cs" />
+    <Compile Include="Services\Implementation\FileService\ReadFileService.cs" />
+    <Compile Include="Services\Implementation\FileService\WriteFileService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

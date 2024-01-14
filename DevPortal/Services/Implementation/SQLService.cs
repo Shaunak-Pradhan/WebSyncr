@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web.Management;
-
 namespace DevPortal.Services.Implementation
 {
     public class SQLService : ISQLService
@@ -20,14 +19,19 @@ namespace DevPortal.Services.Implementation
         }
         public SqlConnection SqlConnectionObj()
         {
-            SqlConnection sqlconn = new SqlConnection(webHostService.Environment());
+            string connectionString = webHostService.Environment(); 
+            SqlConnection sqlconn = null;  
             try
             {
-                sqlconn.Open();
+                sqlconn = new SqlConnection(connectionString);  
+                if (sqlconn.State == ConnectionState.Closed)
+                {
+                    sqlconn.Open();
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception("Error opening SQL connection: " + ex.ToString());
             }
             return sqlconn;
         }
@@ -108,7 +112,6 @@ namespace DevPortal.Services.Implementation
         {
             SqlCommand sqlcmd3 = new SqlCommand("delete from Pages where  PID =" + id, SqlConnectionObj());
             sqlcmd3.ExecuteReader();
-
         }
         public void UpdateTableSQL(string Table, string PrimaryKeyName, int ID, string colname, string value)
         {

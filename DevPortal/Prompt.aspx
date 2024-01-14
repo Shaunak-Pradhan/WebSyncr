@@ -37,7 +37,7 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="default.aspx">
                         <span>Websyncr
                         </span>
                     </a>
@@ -48,8 +48,8 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Dashboard <span class="sr-only">(current)</span> </a>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="Dashboard.aspx">Dashboard </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="CMS.aspx">CMS</a>
@@ -57,8 +57,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="Optimizer.aspx">Optimizer</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Prompt.aspx">Prompter</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Prompt.aspx">Prompter <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Default.aspx">Why Us</a>

@@ -9,6 +9,7 @@ using DevPortal.Services.Interface;
 using DevPortal.Models;
 using DevPortal.DTOs;
 using System.Data;
+using System.Web.Services;
 
 namespace DevPortal.Services.Implementation
 {
@@ -115,9 +116,9 @@ namespace DevPortal.Services.Implementation
             try
             {
                 string filePath = "your_file.txt";
-                string fileContent = File.ReadAllText(filePath);
+                string fileContent = System.IO.File.ReadAllText(filePath);
                 fileContent = fileContent.Replace(tag, value);
-                File.WriteAllText(filePath, fileContent);
+                System.IO.File.WriteAllText(filePath, fileContent);
             }
             catch (Exception e)
             {
@@ -130,9 +131,9 @@ namespace DevPortal.Services.Implementation
             try
             {
                 string filePath = "your_file.txt";
-                string fileContent = File.ReadAllText(filePath);
+                string fileContent = System.IO.File.ReadAllText(filePath);
                 fileContent = fileContent.Replace("", "");
-                File.WriteAllText(filePath, fileContent);
+                System.IO.File.WriteAllText(filePath, fileContent);
             }
             catch (Exception e)
             {
@@ -145,9 +146,9 @@ namespace DevPortal.Services.Implementation
             try
             {
                 string filePath = @"C:\Users\ShaunakSunilPradhan\Desktop\" + filename;
-                string fileContent = File.ReadAllText(filePath);
+                string fileContent = System.IO.File.ReadAllText(filePath);
                 fileContent = fileContent.Replace(placeholder(tag), value);
-                File.WriteAllText(filePath, fileContent);
+                System.IO.File.WriteAllText(filePath, fileContent);
             }
             catch (Exception e)
             {
@@ -160,7 +161,7 @@ namespace DevPortal.Services.Implementation
             string filePath = @"C:\Users\ShaunakSunilPradhan\Desktop\" + filename;
             try
             {
-                string fileContent = File.ReadAllText(filePath);
+                string fileContent = System.IO.File.ReadAllText(filePath);
                 string headContent = _getHTML(fileContent, tag);
                 return headContent;
             }
@@ -173,13 +174,13 @@ namespace DevPortal.Services.Implementation
         public string writeHTML(string filename, string tag, string value)
         {
             string filePath = @"C:\Users\ShaunakSunilPradhan\Desktop\" + filename;
-            string htmlContent = File.ReadAllText(filePath);
+            string htmlContent = System.IO.File.ReadAllText(filePath);
             int Start = htmlContent.IndexOf($@"<{tag}>");
             int End = htmlContent.IndexOf($@"</{tag}>");
             if (Start != -1 && End != -1)
             {
                 string modifiedHtml = htmlContent.Substring(0, Start + tag.Length + 2) + value + htmlContent.Substring(End);
-                File.WriteAllText(filePath, modifiedHtml);
+                System.IO.File.WriteAllText(filePath, modifiedHtml);
             }
             return "done";
         }
