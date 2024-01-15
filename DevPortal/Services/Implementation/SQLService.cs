@@ -19,22 +19,22 @@ namespace DevPortal.Services.Implementation
         }
         public SqlConnection SqlConnectionObj()
         {
-            string connectionString = webHostService.Environment(); 
-            SqlConnection sqlconn = null;  
+            string connectionString = webHostService.Environment();
+
             try
             {
-                sqlconn = new SqlConnection(connectionString);  
-                if (sqlconn.State == ConnectionState.Closed)
+                using (SqlConnection sqlconn = new SqlConnection(connectionString))
                 {
                     sqlconn.Open();
+                    return sqlconn;
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error opening SQL connection: " + ex.ToString());
+                throw new Exception($"Error opening SQL connection. Connection String: {connectionString}. {ex.ToString()}");
             }
-            return sqlconn;
         }
+
         public void InsertToPages(int Index, string FileName, string DisplayName)
         {
             SqlConnection connection1 = new SqlConnection(webHostService.Environment());

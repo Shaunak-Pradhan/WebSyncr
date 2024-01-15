@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public class WebHostService : IWebHostService
 {
-    string environment = "SmarterASP";
+    string environment = "Local";
     public string Environment()
     {
         string connectionString;

@@ -60,7 +60,7 @@ namespace DevPortal.Services.Implementation
             try
             {
                 string filePath = webHostService.Directory(filename);
-                //string filePath2 = $@"h:\root\home\shaunakpradhan-001\www\websyncr\publish\Pages\{filename}.html";
+                //string filePath = $@"h:\root\home\shaunakpradhan-001\www\websyncr\publish\Pages\{filename}.html";
                 string directoryPath = Path.GetDirectoryName(filePath);
 
                 if (!Directory.Exists(directoryPath))
